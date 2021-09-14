@@ -25,8 +25,8 @@
 </script>
 
 
-<h1>Episodes</h1>
 <main>
+  <h1>Episodes</h1>
   {#each episodes as ep}
     <button on:click={() => $episode = ep}>{ep.title}</button>
   {/each}
@@ -37,5 +37,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    max-width: 50%;
+    margin: 0 auto;
   }
 </style>
