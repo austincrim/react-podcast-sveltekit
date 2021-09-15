@@ -28,7 +28,10 @@
 <main>
   <h1>Episodes</h1>
   {#each episodes as ep}
-    <button on:click={() => $episode = ep}>{ep.title}</button>
+  <article>
+    <a href={`/${ep.slug}`}>{ep.title}</a>
+    <button on:click={() => $episode = ep}>Play</button>
+  </article>
   {/each}
 </main>
 
@@ -36,8 +39,14 @@
   main {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     max-width: 50%;
     margin: 0 auto;
+  }
+
+  article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 </style>
